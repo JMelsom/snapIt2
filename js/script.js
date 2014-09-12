@@ -3,8 +3,8 @@ var pictureSource, destinationType;
 document.addEventListener('deviceready', loaded, false);
 
 function loaded(){
-	pictureSource = navigator.camera.PictureSourceType;
-	destinationType = navigator.camera.DestinationType;
+	pictureSource = navigator.camera.PictureSourceType.CAMERA;
+	destinationType = navigator.camera.DestinationType.DATA_URL;
 }
 
 function capturePhoto(){
