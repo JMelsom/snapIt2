@@ -11,7 +11,7 @@ $(document).ready(function(e){
 	});
 	
 	$.ajax({
-		url:'/data.php',
+		url:'data.php',
 		success: function(data){
 			$('#explore ul').append(data);
 		}
