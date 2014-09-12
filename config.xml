@@ -64,6 +64,8 @@
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
+    
+    <feature name="http://api.phonegap.com/1.0/camera"/>
     <!--
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
