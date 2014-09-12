@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial scale=1" charset="UTF-8">
+	<title>Snap It</title>
+	<link href="style.css" rel="stylesheet">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/script.js"></script>
+	<script src="phonegap.js"></script>
+</head>
+
+<body>
+	<div data-role="page">
+		<header data-role="header">
+			<h1>Explore</h1>
+		</header>
+		<footer data-role="footer">
+			<nav>
+				<ul>
+					<li><a data-tab="explore" data-icon="explore" data-iconpos="top">Explore</a>
+					</li>
+					<li><a data-tab="share" data-icon="share" data-iconpos="top">Share</a>
+					</li>
+					<li><a data-tab="likes" data-icon="star" data-iconpos="top">Likes</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+
+		<section data-role="gallery" id="explore">
+			<ul>
+				<?php for($i=0; $i < 10; $i++){ ?>
+				<li>
+					<figure>
+						<img src="http://lorempixel.com/300/20<?=$i?>" alt="selfie">
+						<figcaption>
+							<a data-icon="flag" data-iconpos="notext" data-pos="left">Flag</a>
+							<a data-icon="star" data-iconpos="right" data-pos="right">9,999</a>
+						</figcaption>
+					</figure>
+				</li>
+				<?php } ?>
+			</ul>
+		</section>
+
+		<section data-role="likes" id="likes">
+			<ul>
+				<?php for($i=0; $i < 5; $i++){ ?>
+				<li>
+					<figure>
+						<img src="http://lorempixel.com/300/20<?=$i?>" alt="selfie">
+						<figcaption>
+							<a data-icon="flag" data-iconpos="notext" data-pos="left">Flag</a>
+							<a data-icon="star" data-iconpos="right" data-pos="right">9,999</a>
+						</figcaption>
+					</figure>
+				</li>
+				<?php } ?>
+			</ul>
+		</section>
+
+		<section data-role="camera" id="share">
+			<figure>
+				<img src="http://lorempixel.com/300/20<?=$i?>" alt="Selfie">
+				<figcaption>
+					<a data-icon="shutter" data-iconpos="notext">Take Picture</a>
+				</figcaption>
+			</figure>
+		</section>
+
+	</div>
+</body>
+
+</html>
