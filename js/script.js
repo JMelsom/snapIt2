@@ -10,4 +10,10 @@ $(document).ready(function(e){
 		$(this).removeClass('active');
 	});
 	
+	$.ajax({
+		url:'/data.php',
+		success: function(data){
+			$('#explore ul').append(data);
+		}
+	});
 });
