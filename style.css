@@ -169,6 +169,19 @@ body {
 	margin: 0;
 	padding: 0;
 }
+[data-role=likes] {
+	margin-top: 46px;
+	margin-bottom: 50px;
+}
+[data-role=likes] ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+[data-role=likes] ul li {
+	margin: 0;
+	padding: 0;
+}
 /*----------------------------------------
 
 				FIGURES

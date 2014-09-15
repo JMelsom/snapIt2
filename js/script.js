@@ -34,10 +34,32 @@ $(document).ready(function(e){
 		$(this).removeClass('active');
 	});
 	
+	$('[data-tab=explore]').on('click', function(e){
+		$('#explore').show();
+		$('#share').hide();
+		$('#likes').hide();
+		$('header h1').text('Explore');
+	});
+	$('[data-tab=share]').on('click', function(e){
+		$('#explore').hide();
+		$('#share').show();
+		$('#likes').hide();
+		$('header h1').text('Share');
+	});
+	$('[data-tab=likes]').on('click', function(e){
+		$('#explore').hide();
+		$('#share').hide();
+		$('#likes').show();
+		$('header h1').text('Likes');
+	});
+	
 	$.ajax({
 		url:'http://jmelsom.catstudents.com/snapIt/data.php',
 		success: function(data){
 			$('#explore ul').append(data);
 		}
+	});
+	$('#likethis').on('click', function(e){
+		$('#likes ul').append().parent().parent().parent();
 	});
 });
