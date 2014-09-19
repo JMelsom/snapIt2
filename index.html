@@ -5,6 +5,7 @@
 <title>Snap It</title>
 <link href="style.css" rel="stylesheet">
 <script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/hammer.min.js"></script>
 <script src="js/script.js"></script>
 <script src="phonegap.js"></script>
 </head>
@@ -24,16 +25,11 @@
     </nav>
   </footer>
   <section data-role="gallery" id="explore">
-    <ul>
+    <ul id="gallerylist">
     </ul>
   </section>
   <section data-role="likes" id="likes">
-    <ul>
-      <li>
-        <figure> <img src="http://lorempixel.com/300/200/people" alt="selfie">
-          <figcaption> <a data-icon="flag" data-iconpos="notext" data-pos="left" id="flagthis">Flag</a> <a data-icon="star" data-iconpos="right" data-pos="right" id="likethis">9,999</a> </figcaption>
-        </figure>
-      </li>
+    <ul id="likeslist">
     </ul>
   </section>
   <section data-role="camera" id="share" onClick="capturePhoto();">

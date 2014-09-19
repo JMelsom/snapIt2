@@ -1,5 +1,4 @@
 var pictureSource, destinationType;
-
 document.addEventListener('deviceready', loaded, false);
 
 function loaded(){
@@ -26,6 +25,15 @@ function onFail(message){
 
 $(document).ready(function(e){
 	$('html').addClass('js');
+	$('#explore').fadeIn(500);
+	$('#share').hide();
+	$('#likes').hide();
+	
+	
+	var hammertime = new Hammer(document.querySelector('[data-role=page]'));
+	hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+	
+	var isShowing = true;
 	
 	$('[data-role=page]').on('mouseover', '[data-icon]', function(e){
 		$(this).addClass('active');
@@ -35,22 +43,24 @@ $(document).ready(function(e){
 	});
 	
 	$('[data-tab=explore]').on('click', function(e){
-		$('#explore').show();
+		$('#explore').fadeIn(500);
 		$('#share').hide();
 		$('#likes').hide();
 		$('header h1').text('Explore');
+		isShowing = true;
 	});
 	$('[data-tab=share]').on('click', function(e){
 		$('#explore').hide();
-		$('#share').show();
+		$('#share').fadeIn();
 		$('#likes').hide();
 		$('header h1').text('Share');
 	});
 	$('[data-tab=likes]').on('click', function(e){
 		$('#explore').hide();
 		$('#share').hide();
-		$('#likes').show();
+		$('#likes').fadeIn(500);
 		$('header h1').text('Likes');
+		isShowing = false;
 	});
 	
 	$.ajax({
@@ -59,7 +69,23 @@ $(document).ready(function(e){
 			$('#explore ul').append(data);
 		}
 	});
-	$('#likethis').on('click', function(e){
-		$('#likes ul').append().parent().parent().parent();
+	$('[data-role=page]').on('click', '.likethis', function(e){
+		$(this).parent().parent().parent().clone().appendTo('#likeslist');
 	});
+	
+	hammertime.on('swipe', function(e){
+		if(isShowing == true){
+			$('#explore').hide();
+			$('#likes').fadeIn(500);
+			$('header h1').text('Likes');
+			isShowing = false;
+		} else if(isShowing == false){
+			$('#explore').fadeIn(500);
+			$('#likes').hide();
+			$('header h1').text('Explore');
+			isShowing = true;
+		}
+		console.log(isShowing);
+	});
+	
 });

@@ -1,0 +1,2 @@
+[Fri Sep 05 2014 13:26:02 GMT-0700 (PDT)] Layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Fri Sep 05 2014 13:26:02 GMT-0700 (PDT)] Layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
